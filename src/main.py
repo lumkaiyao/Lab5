@@ -10,19 +10,31 @@ lcd.lcd_clear()
 
 #Call back function invoked when any key on keypad is pressed
 def key_pressed(key):
-    password.append(key)
+    print(key)
 
-    print(password)
+    if key==1:
+        lcd.lcd_clear()
+        lcd.lcd_display_string("LED Control",1)
+        lcd.lcd_display_string("Blink LED",2)
+        led_control.led_control_init()
+    else:
+        lcd.lcd_clear()
+        lcd.lcd_display_string("LED Control",1)
+        lcd.lcd_display_string("OFF LED",2)
+        led_control.stop_thread()
 
 
 def main():
     # Initialize LCD
     lcd = LCD.lcd()
     lcd.lcd_clear()
-    led_control.led_control_init()
+    
 
     # Display something on LCD
-    lcd.lcd_display_string("Lab 5 - ET0735", 1)
+    #lcd.lcd_display_string("Lab 5 - ET0735", 1)
+
+    lcd.lcd_display_string("LED CONTROL",1)
+    lcd.lcd_display_string("0:Off 1:Blink",2)
 
     # Initialize the HAL keypad driver
     keypad.init(key_pressed)

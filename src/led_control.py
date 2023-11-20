@@ -22,3 +22,7 @@ def led_control_init():
     t1.start()
     #Set initial LED blinking every 1 second after Thread starts 
     delay = 1
+    
+def stop_thread():
+    global delay
+    delay=0
