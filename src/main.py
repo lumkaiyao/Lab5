@@ -21,7 +21,7 @@ def main():
     lcd.lcd_clear()
 
     # Display something on LCD
-    lcd.lcd_display_string("Lab 5", 1)
+    lcd.lcd_display_string("Lab 5 5", 1)
 
     # Initialize the HAL keypad driver
     keypad.init(key_pressed)
