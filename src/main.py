@@ -1,7 +1,7 @@
 from threading import Thread
 from hal import hal_keypad as keypad
 from hal import hal_lcd as LCD
-
+import led_control
 #Empty list to store sequence of keypad presses
 password = []
 
@@ -19,9 +19,10 @@ def main():
     # Initialize LCD
     lcd = LCD.lcd()
     lcd.lcd_clear()
+    led_control.led_control_init()
 
     # Display something on LCD
-    lcd.lcd_display_string("Lab 5 5", 1)
+    lcd.lcd_display_string("Lab 5 - ET0735", 1)
 
     # Initialize the HAL keypad driver
     keypad.init(key_pressed)
